@@ -5,10 +5,18 @@ const nextConfig = {
             {
                 protocol: "https",
                 hostname: "links.papareact.com"
+            },
+            {
+                protocol: "http",
+                hostname: "image.tmdb.org"
             }
+            
         ]
     }
 
-};
+   
+}
+
+
 
 export default nextConfig;

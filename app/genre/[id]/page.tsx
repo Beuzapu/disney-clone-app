@@ -1,19 +1,28 @@
-import { Button } from '@/components/ui/button';
-import React from 'react'
+
+import MoviesCarousel from '@/components/MoviesCarousel';
+import { getDiscoverMovies, getPoplularMovies } from '@/lib/getMovies';
+
+
+
 type Props = {
     params: {
         id: string;
     };
-    searchParams:{
-        genre: string;
-    };
+   
 };
 
-function GenrePage({params: {id}, searchParams: {genre}} : Props) {
+async function GenrePage({params: {id}} : Props) {
+
+  const termToUse = decodeURI(id);
+
+  const movies = await getPoplularMovies();
+
   return (
-    <><div className="">Welcome to the genre with ID: {id} and name: {genre}</div>
-    <Button>Click me</Button></>
-  )
+    <div className="max-w-7xl mx-auto relative top-20">
+      <MoviesCarousel  movies={movies} />
+  </div>
+  
+  );
 }
 
 export default GenrePage

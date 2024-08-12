@@ -1,4 +1,5 @@
 export type Movie = {
+    [x: string]: any;
     adult: boolean;
     backdrop_path: string;
     genre_ids: number;
@@ -17,7 +18,7 @@ export type Movie = {
 
 export type SearchResults = {
     page: number;
-    result: Movie[];
+    results: Movie[];
     total_pages: number;
     total_results: number;
 }
